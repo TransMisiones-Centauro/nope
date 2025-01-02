@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="NOPE: Novel Object Pose Estimation from a Single Image.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOPE: Novel Object Pose Estimation from a Single Image</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">NOPE: Novel Object Pose Estimation from a Single Image</h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://nv-nguyen.github.io/">Van Nguyen Nguyen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="http://imagine.enpc.fr/~groueixt/">Thibault Groueix</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=5G-6ubcAAAAJ&hl=en">Georgy Ponimatkin</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://yinlinhu.github.io/">Yinlin Hu</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="http://imagine.enpc.fr/~marletr/"> Renaud Marlet</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://people.epfl.ch/mathieu.salzmann"> Mathieu Salzmann</a><sup>4</sup>,</span>
+              <span class="author-block">
+                <a href="https://vincentlepetit.github.io/">Vincent Lepetit</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>LIGM, Ecole des Ponts,</span>
+              <span class="author-block"><sup>2</sup>Adobe,</span>
+              <span class="author-block"><sup>3</sup>MagicLeap</span>
+              <span class="author-block"><sup>4</sup>EPFL</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2303.13612" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/nv-nguyen/nope" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-five-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-justified">
+            <image src="images/framework.png" width="1280" class="img-responsive" alt="overview"><br>
+              <p class="text-justify">
+                <strong>TL;DR:</strong> We introduce NOPE, a simple approach to estimate relative pose of unseen objects
+                given only a single reference image. NOPE also predicts 3D pose distribution which can be used to
+                address pose ambiguities due to symmetries.
+              </p>
+          </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-five-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The practicality of 3D object pose estimation remains limited for many
+              applications due to the need for prior knowledge of a 3D model and a training period for new
+              objects. To address this limitation, we propose an approach that takes a single image of a new
+              object as input and predicts the relative pose of this object in new images without prior knowledge
+              of the object's 3D model and without requiring training time for new objects and categories. We
+              achieve this by training a model to directly predict discriminative embeddings for viewpoints
+              surrounding the object. This prediction is done using a simple U-Net architecture with attention and
+              conditioned on the desired pose, which yields extremely fast inference. We compare our approach to
+              state-of-the-art methods and show it outperforms them both in terms of accuracy and robustness.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-five-fifths">
+          <h2 class="title is-3">Qualitative results</h2>
+          <div style="display: flex; justify-content: center;">
+            <img src='images/result.gif' width="420" style="border: 1px solid black;">
+          </div>
+
+          <div class="content has-text-justified">
+            <image src="images/result.png" width="1280" class="img-responsive" alt="qualitative"><br>
+              <p class="text-justify">
+                Visual results on unseen categories from ShapeNet. An arrow indicates the pose with the highest
+                probability as recovered by our method.
+                We visually compare with <a href="https://github.com/nv-nguyen/pizza">PIZZA</a>, which is the method
+                with the second best performance. <strong>We visualize the predicted poses by rendering the object
+                  from these poses, but the 3D model is only used for visualization purposes, not as input to our
+                  method.
+                  Similarly, we use the canonical pose of the 3D model to visualize this distribution, but not as
+                  input to our method.</strong>
+              </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{nguyen2024nope,
+        title     = {{NOPE: Novel Object Pose Estimation from a Single Image}},
+        author    = {Nguyen, Van Nguyen and Groueix, Thibault and Ponimatkin, Georgy and Hu, Yinlin and Marlet, Renaud and Salzmann, Mathieu and Lepetit, Vincent},
+        booktitle = {{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}}
+        year = 2024
+      }</code></pre>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Further information</h2>
+      If you like this project, check out our works on novel object segmentation / pose estimation:
+      <ul>
+        <li><a href="https://nv-nguyen.github.io/gigaPose/"> GigaPose: Fast and Robust Novel Object Pose Estimation via
+            One
+            Correspondence (CVPR 2024) </a></li>
+        <li><a href="https://nv-nguyen.github.io/cnos/"> CNOS: A Strong Baseline for CAD-based Novel Object Segmentation
+            (ICCV 2023 R6D) </a></li>
+        <li><a href="https://nv-nguyen.github.io/template-pose/"> Templates for 3D Object Pose Estimation Revisited:
+            Generalization to New Objects and Robustness to Occlusions (CVPR 2022)</a></li>
+        <li><a href="https://github.com/nv-nguyen/pizza"> PIZZA: A Powerful Image-only Zero-Shot Zero-CAD Approach to
+            6DoF Tracking (3DV 2022) </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is taken from <a href="https://github.com/nerfies/nerfies.github.io">here</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
